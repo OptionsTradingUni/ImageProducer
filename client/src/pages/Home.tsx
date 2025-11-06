@@ -8,6 +8,7 @@ import ActionButtons from "@/components/ActionButtons";
 import AuditSection from "@/components/AuditSection";
 import ProfileSection from "@/components/ProfileSection";
 import ExchangeWidget from "@/components/ExchangeWidget";
+import DownloadButton from "@/components/DownloadButton";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <AuditSection />
         <ProfileSection />
         <ExchangeWidget />
+        <DownloadButton />
       </div>
     </div>
   );
