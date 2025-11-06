@@ -24,7 +24,7 @@ export default function Home() {
           
           <div className="grid grid-cols-3 gap-4">
             <PriceDisplay usdPrice="0.002711" solPrice="0.00001711" />
-            <MarketStats liquidity="$362K" fdv="$2.7M" marketCap="$2.7M" />
+            <MarketStats liquidity="$1.42M" fdv="$7.9M" marketCap="$7.9M" />
           </div>
 
           <TimeframeStats />
