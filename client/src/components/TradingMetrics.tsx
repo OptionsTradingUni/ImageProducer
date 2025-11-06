@@ -5,9 +5,9 @@ export default function TradingMetrics() {
   const txns = "4,827";
   const buys = "3,108";
   const sells = "1,719";
-  const volume = "$1.90M";
-  const buyVol = "$1.41M";
-  const sellVol = "$489K";
+  const volume = "$5.29M";
+  const buyVol = "$3.88M";
+  const sellVol = "$1.41M";
   const makers = "2,806";
   const buyers = "2,911";
 
