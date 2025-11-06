@@ -19,84 +19,69 @@ export default function TradingMetrics({
   const sellPercentage = 46;
   const buyersPercentage = 55;
   const sellersPercentage = 45;
-  const buyVolPercentage = 52;
-  const sellVolPercentage = 48;
+  const buyVolPercentage = 60;
+  const sellVolPercentage = 40;
 
   return (
-    <Card className="p-6 bg-card border-card-border" data-testid="card-trading-metrics">
-      <div className="grid grid-cols-4 gap-6">
+    <Card className="p-4 bg-card border-card-border" data-testid="card-trading-metrics">
+      <div className="grid grid-cols-7 gap-3 items-end">
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">TXNS</div>
-          <div className="text-2xl font-bold" data-testid="text-txns">{txns}</div>
+          <div className="text-lg font-bold" data-testid="text-txns">{txns}</div>
+          <div className="text-lg font-bold text-muted-foreground" data-testid="text-txns-secondary">$1.3M</div>
         </div>
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">BUYS</div>
-          <div className="text-2xl font-bold text-green-500" data-testid="text-buys">{buys}</div>
-          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-green-500 rounded-full"
-              style={{ width: `${buyPercentage}%` }}
-            />
+          <div className="text-lg font-bold" data-testid="text-buys">{buys}</div>
+          <div className="mt-1 flex gap-0.5 h-8 items-end">
+            <div className="w-2 bg-muted rounded-sm h-1/4"></div>
+            <div className="w-2 bg-muted rounded-sm h-2/4"></div>
+            <div className="w-2 bg-muted rounded-sm h-1/3"></div>
+            <div className="w-2 bg-green-500 rounded-sm h-full"></div>
           </div>
         </div>
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">SELLS</div>
-          <div className="text-2xl font-bold text-red-500" data-testid="text-sells">{sells}</div>
-          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden flex justify-end">
-            <div 
-              className="h-full bg-red-500 rounded-full"
-              style={{ width: `${sellPercentage}%` }}
-            />
+          <div className="text-lg font-bold" data-testid="text-sells">{sells}</div>
+          <div className="mt-1 flex gap-0.5 h-8 items-end">
+            <div className="w-2 bg-muted rounded-sm h-1/3"></div>
+            <div className="w-2 bg-muted rounded-sm h-2/4"></div>
+            <div className="w-2 bg-muted rounded-sm h-1/4"></div>
+            <div className="w-2 bg-green-500 rounded-sm h-full"></div>
           </div>
         </div>
-
-        <div>
-          <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">VOLUME</div>
-          <div className="text-2xl font-bold" data-testid="text-volume">{volume}</div>
-        </div>
+        
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">BUY VOL</div>
-          <div className="text-2xl font-bold text-green-500" data-testid="text-buy-vol">{buyVol}</div>
-          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-green-500 rounded-full"
-              style={{ width: `${buyVolPercentage}%` }}
-            />
-          </div>
+          <div className="text-lg font-bold" data-testid="text-buy-vol">{buyVol}</div>
+          <div className="text-lg font-bold" data-testid="text-buy-vol-secondary">$1.4M</div>
+          <div className="text-sm text-green-500">✓</div>
         </div>
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">SELL VOL</div>
-          <div className="text-2xl font-bold text-red-500" data-testid="text-sell-vol">{sellVol}</div>
-          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden flex justify-end">
-            <div 
-              className="h-full bg-red-500 rounded-full"
-              style={{ width: `${sellVolPercentage}%` }}
-            />
+          <div className="text-lg font-bold" data-testid="text-sell-vol">{sellVol}</div>
+          <div className="mt-1 flex gap-0.5 h-8 items-end">
+            <div className="w-2 bg-muted rounded-sm h-1/4"></div>
+            <div className="w-2 bg-muted rounded-sm h-2/4"></div>
+            <div className="w-2 bg-muted rounded-sm h-1/3"></div>
+            <div className="w-2 bg-green-500 rounded-sm h-3/4"></div>
           </div>
         </div>
-
+        
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">MAKERS</div>
-          <div className="text-2xl font-bold" data-testid="text-makers">{makers}</div>
+          <div className="text-lg font-bold" data-testid="text-makers">{makers}</div>
+          <div className="text-lg font-bold text-muted-foreground" data-testid="text-makers-secondary">2,727</div>
+          <div className="text-lg font-bold text-muted-foreground" data-testid="text-makers-tertiary">2,272</div>
         </div>
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">BUYERS</div>
-          <div className="text-2xl font-bold text-green-500" data-testid="text-buyers">{buyers}</div>
-          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-green-500 rounded-full"
-              style={{ width: `${buyersPercentage}%` }}
-            />
-          </div>
-        </div>
-        <div>
-          <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">SELLERS</div>
-          <div className="text-2xl font-bold text-red-500" data-testid="text-sellers">{sellers}</div>
-          <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden flex justify-end">
-            <div 
-              className="h-full bg-red-500 rounded-full"
-              style={{ width: `${sellersPercentage}%` }}
-            />
+          <div className="text-lg font-bold" data-testid="text-buyers">{buyers}</div>
+          <div className="mt-1 flex gap-0.5 h-8 items-end">
+            <div className="w-2 bg-muted rounded-sm h-2/4"></div>
+            <div className="w-2 bg-muted rounded-sm h-1/3"></div>
+            <div className="w-2 bg-muted rounded-sm h-1/4"></div>
+            <div className="w-2 bg-green-500 rounded-sm h-full"></div>
           </div>
         </div>
       </div>

@@ -15,32 +15,35 @@ export default function DownloadButton() {
       if (!element) {
         throw new Error('Dashboard content not found');
       }
+      
       const canvas = await html2canvas(element, {
-        backgroundColor: '#0f0f0f',
+        backgroundColor: '#1a2332',
         scale: 2,
-        logging: false,
+        logging: true,
         useCORS: true,
         allowTaint: true,
+        imageTimeout: 0,
+        onclone: (clonedDoc) => {
+          const clonedElement = clonedDoc.getElementById('dashboard-content');
+          if (clonedElement) {
+            clonedElement.style.margin = '0';
+            clonedElement.style.padding = '20px';
+          }
+        }
       });
 
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `clippy-pfp-screenshot-${Date.now()}.png`;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-          
-          toast({
-            title: "Screenshot Downloaded!",
-            description: "Your token dashboard screenshot has been saved.",
-          });
-          console.log('Downloaded screenshot');
-        }
-      }, 'image/png');
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `clippy-pff-${Date.now()}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      
+      toast({
+        title: "Screenshot Downloaded!",
+        description: "Your token dashboard screenshot has been saved.",
+      });
     } catch (error) {
       console.error('Error capturing screenshot:', error);
       toast({

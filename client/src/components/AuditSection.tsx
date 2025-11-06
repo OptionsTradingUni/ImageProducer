@@ -8,8 +8,9 @@ interface EmojiStat {
 
 const emojiStats: EmojiStat[] = [
   { emoji: "🚀", value: "1,407" },
-  { emoji: "🔥", value: "64" },
-  { emoji: "💩", value: "17" },
+  { emoji: "🔥", value: "842" },
+  { emoji: "💩", value: "4" },
+  { emoji: "👍", value: "17" },
   { emoji: "🚩", value: "124" },
 ];
 

@@ -1,78 +1,88 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Globe, Twitter, ChevronDown, ChevronUp, Users, RotateCcw } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { X, ChevronDown, RotateCcw } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useState } from "react";
 import clippyProfile from "@assets/IMG_5016_1762430441740.jpeg";
 
 export default function ProfileSection() {
+  const [tokenAddress, setTokenAddress] = useState("BDPiL9yADAt1YzAiwsiwwmGEY651obbbdiBY1");
+
   return (
-    <div className="px-6 pb-6">
-      <Card className="p-6 bg-card border-card-border" data-testid="card-profile">
-        <div className="flex flex-col items-center">
-          <img
-            src={clippyProfile}
-            alt="Clippy PFP"
-            className="w-32 h-32 rounded-2xl mb-4 object-cover"
-            data-testid="img-token-profile"
-          />
-          <h2 className="text-2xl font-bold mb-4" data-testid="text-token-name">Clippy PFP</h2>
+    <div className="space-y-4 p-4">
+      <div className="flex items-start gap-3">
+        <Avatar className="w-16 h-16 rounded-xl" data-testid="img-sidebar-avatar">
+          <AvatarImage src={clippyProfile} alt="Clippy" />
+          <AvatarFallback>CP</AvatarFallback>
+        </Avatar>
+      </div>
 
-          <div className="w-full space-y-2 mb-4">
-            <Button
-              variant="secondary"
-              className="w-full justify-between h-12"
-              onClick={() => console.log('Community Takeover toggled')}
-              data-testid="button-community-takeover"
-            >
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
-                <span>Community Takeover</span>
-              </div>
-              <ChevronDown className="w-4 h-4" />
-            </Button>
-
-            <Button
-              variant="secondary"
-              className="w-full justify-between h-12"
-              onClick={() => console.log('Original Profile toggled')}
-              data-testid="button-original-profile"
-            >
-              <div className="flex items-center gap-2">
-                <RotateCcw className="w-4 h-4" />
-                <span>Original Profile</span>
-              </div>
-              <ChevronUp className="w-4 h-4" />
-            </Button>
+      <div className="space-y-2">
+        <Badge
+          variant="secondary"
+          className="w-full h-10 justify-between px-4 rounded-lg hover-elevate active-elevate-2 cursor-pointer"
+          data-testid="badge-website"
+        >
+          <div className="flex items-center gap-2">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+              <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
+            </svg>
+            <span className="text-sm font-medium">Website</span>
           </div>
-
-          <div className="flex gap-2 w-full mb-4">
-            <Button
-              variant="secondary"
-              className="flex-1 gap-2 h-12"
-              onClick={() => console.log('Website clicked')}
-              data-testid="button-profile-website"
-            >
-              <Globe className="w-4 h-4" />
-              <span>Website</span>
-            </Button>
-            <Button
-              variant="secondary"
-              className="flex-1 gap-2 h-12"
-              onClick={() => console.log('Twitter clicked')}
-              data-testid="button-profile-twitter"
-            >
-              <Twitter className="w-4 h-4" />
-              <span>Twitter</span>
-            </Button>
+          <X className="w-4 h-4" />
+        </Badge>
+        <Badge
+          variant="secondary"
+          className="w-full h-10 justify-between px-4 rounded-lg hover-elevate active-elevate-2 cursor-pointer"
+          data-testid="badge-twitter"
+        >
+          <div className="flex items-center gap-2">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span className="text-sm font-medium">Twitter</span>
           </div>
+          <X className="w-4 h-4" />
+        </Badge>
+      </div>
 
-          <div className="w-full text-center">
-            <div className="text-sm text-muted-foreground mb-1">Clippy PFP</div>
-            <div className="text-xs text-muted-foreground font-mono break-all" data-testid="text-token-address">
-              BDPiL9eADYz1mUPtAiWmmGEYCjJ3hQLFB51obkbdiEY1
-            </div>
-          </div>
+      <Button
+        variant="secondary"
+        className="w-full justify-between h-10 px-4 rounded-lg"
+        onClick={() => console.log('Community toggle clicked')}
+        data-testid="button-community-toggle"
+      >
+        <div className="flex items-center gap-2">
+          <span className="text-sm">Community</span>
+          <RotateCcw className="w-3 h-3" />
+          <span className="text-sm">Original Profile</span>
         </div>
-      </Card>
+      </Button>
+
+      <Button
+        variant="secondary"
+        className="w-full justify-between h-10 px-4 rounded-lg"
+        onClick={() => console.log('Community Takeover clicked')}
+        data-testid="button-community-takeover"
+      >
+        <span className="text-sm">Community Takeover</span>
+        <ChevronDown className="w-4 h-4" />
+      </Button>
+
+      <div className="pt-4">
+        <div className="text-lg font-bold mb-2" data-testid="text-sidebar-token-name">Clippy PFF</div>
+        <Input
+          type="text"
+          value={tokenAddress}
+          onChange={(e) => setTokenAddress(e.target.value)}
+          className="text-xs font-mono bg-muted border-muted-foreground/20 h-auto py-2"
+          placeholder="Enter token address"
+          data-testid="input-token-address"
+        />
+      </div>
     </div>
   );
 }
