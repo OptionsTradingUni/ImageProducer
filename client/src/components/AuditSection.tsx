@@ -9,9 +9,9 @@ interface EmojiStat {
 const emojiStats: EmojiStat[] = [
   { emoji: "🚀", value: "1,407" },
   { emoji: "🔥", value: "842" },
-  { emoji: "💩", value: "4" },
-  { emoji: "👍", value: "17" },
-  { emoji: "🚩", value: "124" },
+  { emoji: "💩", value: "6" },
+  { emoji: "👍", value: "145" },
+  { emoji: "🚩", value: "25" },
 ];
 
 export default function AuditSection() {
