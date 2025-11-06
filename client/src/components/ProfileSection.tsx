@@ -68,7 +68,7 @@ export default function ProfileSection() {
         onClick={() => console.log('Community Takeover clicked')}
         data-testid="button-community-takeover"
       >
-        <span className="text-sm">Community Takeover</span>
+        <span className="text-sm">Community Control</span>
         <ChevronDown className="w-4 h-4" />
       </Button>
 
