@@ -19,12 +19,38 @@ A powerful web application for generating and enhancing AI images, built with mo
 - **Routing**: Wouter
 - **AI Integration**: OpenAI
 
-## Getting Started
+## Deployment
+
+### Deploy to Railway (Recommended)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/OptionsTradingUni/ImageProducer)
+
+1. Click the "Deploy on Railway" button above or go to [Railway](https://railway.app)
+2. Sign in with your GitHub account
+3. Click "Deploy from GitHub repo"
+4. Select this repository: `OptionsTradingUni/ImageProducer`
+5. Add environment variables in Railway dashboard:
+   - `OPENAI_API_KEY`: Your OpenAI API key (required)
+   - `PORT`: Will be set automatically by Railway
+6. Railway will automatically:
+   - Install dependencies
+   - Build your application
+   - Deploy to a live URL
+7. Your app will be live at `https://your-app-name.up.railway.app`
+
+### Deploy to Replit
+
+1. Fork this Repl or import from GitHub
+2. Add your `OPENAI_API_KEY` to Replit Secrets
+3. Click "Run" or "Publish" to deploy
+
+## Local Development
 
 ### Prerequisites
 
 - Node.js (v18 or higher)
 - npm or yarn
+- OpenAI API key
 
 ### Installation
 
@@ -40,7 +66,12 @@ npm install
 ```
 
 3. Set up environment variables:
-   - Add your OpenAI API key to the Replit Secrets or create a `.env` file
+   - Copy `.env.example` to `.env`
+   - Add your OpenAI API key to `.env`
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your OPENAI_API_KEY
+   ```
 
 4. Run the development server:
 ```bash
