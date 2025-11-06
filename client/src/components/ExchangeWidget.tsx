@@ -5,8 +5,9 @@ import { ArrowDownUp, Check } from "lucide-react";
 import { useState } from "react";
 
 export default function ExchangeWidget() {
+  const PRICE = 0.002711; // Token price in USD
   const [fromAmount, setFromAmount] = useState("1");
-  const [toAmount, setToAmount] = useState("0.002499");
+  const [toAmount, setToAmount] = useState("0.002711");
   const [toCurrency, setToCurrency] = useState<"USD" | "SOL">("USD");
 
   return (
@@ -19,7 +20,7 @@ export default function ExchangeWidget() {
             onChange={(e) => {
               setFromAmount(e.target.value);
               const numValue = parseFloat(e.target.value) || 0;
-              setToAmount((numValue * 0.002499).toFixed(6));
+              setToAmount((numValue * 0.002711).toFixed(6));
             }}
             className="h-14 text-right pr-20 text-lg"
             data-testid="input-from-amount"
@@ -47,7 +48,7 @@ export default function ExchangeWidget() {
             onChange={(e) => {
               setToAmount(e.target.value);
               const numValue = parseFloat(e.target.value) || 0;
-              setFromAmount((numValue / 0.002499).toFixed(6));
+              setFromAmount((numValue / 0.002711).toFixed(6));
             }}
             className="h-14 text-right pr-32 text-lg"
             data-testid="input-to-amount"
