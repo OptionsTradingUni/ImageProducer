@@ -1,4 +1,4 @@
-import clippyImage from "@assets/IMG_4997_1762430071322.jpeg";
+import clippyImage from "@assets/IMG_5016_1762430441740.jpeg";
 
 export default function TokenHeader() {
   return (
@@ -7,7 +7,7 @@ export default function TokenHeader() {
         <img 
           src={clippyImage} 
           alt="Clippy mascot" 
-          className="w-24 h-24 object-contain"
+          className="w-32 h-24 object-cover rounded-xl"
           data-testid="img-clippy-mascot"
         />
         <div className="flex-1 pt-2">

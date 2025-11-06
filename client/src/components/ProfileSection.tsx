@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Globe, Twitter, ChevronDown, ChevronUp, Users, RotateCcw } from "lucide-react";
-import clippyProfile from "@assets/IMG_5008_1762430071322.jpeg";
+import clippyProfile from "@assets/IMG_5016_1762430441740.jpeg";
 
 export default function ProfileSection() {
   return (
@@ -10,11 +10,11 @@ export default function ProfileSection() {
         <div className="flex flex-col items-center">
           <img
             src={clippyProfile}
-            alt="Clippy PFP Cult"
+            alt="Clippy PFP"
             className="w-32 h-32 rounded-2xl mb-4 object-cover"
             data-testid="img-token-profile"
           />
-          <h2 className="text-2xl font-bold mb-4" data-testid="text-token-name">Clippy PFP Cult</h2>
+          <h2 className="text-2xl font-bold mb-4" data-testid="text-token-name">Clippy PFP</h2>
 
           <div className="w-full space-y-2 mb-4">
             <Button
@@ -66,7 +66,7 @@ export default function ProfileSection() {
           </div>
 
           <div className="w-full text-center">
-            <div className="text-sm text-muted-foreground mb-1">Clippy PFP Cult</div>
+            <div className="text-sm text-muted-foreground mb-1">Clippy PFP</div>
             <div className="text-xs text-muted-foreground font-mono break-all" data-testid="text-token-address">
               BDPiL9eADYz1mUPtAiWmmGEYCjJ3hQLFB51obkbdiEY1
             </div>
