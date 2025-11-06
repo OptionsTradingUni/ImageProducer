@@ -34,9 +34,11 @@ A powerful web application for generating and enhancing AI images, built with mo
    - `PORT`: Will be set automatically by Railway
 6. Railway will automatically:
    - Install dependencies
-   - Build your application
+   - Build your application (frontend + backend)
    - Deploy to a live URL
 7. Your app will be live at `https://your-app-name.up.railway.app`
+
+**Note**: The build process uses a custom script to ensure ES module compatibility in production.
 
 ### Deploy to Replit
 

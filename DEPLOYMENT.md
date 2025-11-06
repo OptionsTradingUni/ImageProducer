@@ -76,9 +76,13 @@ Once deployed, Railway provides:
 
 Your project includes a `railway.json` file that configures:
 - **Builder**: Nixpacks (Railway's default)
-- **Build Command**: `npm run build`
+- **Build Command**: `vite build && node scripts/build.js`
+  - Builds the frontend with Vite
+  - Bundles the backend with esbuild (custom script handles ES module compatibility)
 - **Start Command**: `npm start`
 - **Restart Policy**: Restarts on failure (max 10 retries)
+
+**Note**: The custom build script (`scripts/build.js`) ensures compatibility with ES modules by properly handling `import.meta.dirname` during the build process. This is required for the production bundle to work correctly.
 
 ### Troubleshooting
 
