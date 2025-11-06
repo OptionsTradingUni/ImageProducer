@@ -11,7 +11,7 @@ const timeframes: TimeframeData[] = [
   { label: "5M", value: "0.20%", isPositive: true },
   { label: "1H", value: "15.07%", isPositive: true },
   { label: "6H", value: "6.35%", isPositive: true },
-  { label: "24H", value: "720%", isPositive: true },
+  { label: "24H", value: "229%", isPositive: true },
 ];
 
 export default function TimeframeStats() {
