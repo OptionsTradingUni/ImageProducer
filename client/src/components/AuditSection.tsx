@@ -15,31 +15,30 @@ const emojiStats: EmojiStat[] = [
 
 export default function AuditSection() {
   return (
-    <div className="px-6 pb-6">
-      <Card className="p-4 bg-card border-card-border mb-4" data-testid="card-audit-header">
-        <div className="flex items-center justify-between">
-          <span className="text-xl font-bold">Audit</span>
+    <Card className="p-4 bg-card border-card-border" data-testid="card-audit-header">
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <span className="text-lg font-bold">Audit</span>
           <div className="flex items-center gap-2">
-            <span className="text-sm">No issues</span>
+            <span className="text-sm text-muted-foreground">No issues</span>
             <CheckCircle2 className="w-5 h-5 text-green-500" />
-            <ChevronDown className="w-4 h-4" />
           </div>
         </div>
-      </Card>
 
-      <div className="grid grid-cols-4 gap-3">
-        {emojiStats.map((stat, index) => (
-          <Card
-            key={index}
-            className="p-4 bg-card border-card-border flex flex-col items-center gap-2 hover-elevate active-elevate-2 cursor-pointer"
-            onClick={() => console.log(`Emoji stat clicked: ${stat.emoji}`)}
-            data-testid={`card-emoji-${index}`}
-          >
-            <div className="text-3xl" data-testid={`emoji-${index}`}>{stat.emoji}</div>
-            <div className="text-lg font-bold" data-testid={`value-${index}`}>{stat.value}</div>
-          </Card>
-        ))}
+        <div className="flex items-center gap-3">
+          {emojiStats.map((stat, index) => (
+            <Card
+              key={index}
+              className="px-4 py-2 bg-muted/50 border-card-border flex items-center gap-2 hover-elevate active-elevate-2 cursor-pointer min-w-[80px] justify-center"
+              onClick={() => console.log(`Emoji stat clicked: ${stat.emoji}`)}
+              data-testid={`card-emoji-${index}`}
+            >
+              <div className="text-xl" data-testid={`emoji-${index}`}>{stat.emoji}</div>
+              <div className="text-sm font-bold" data-testid={`value-${index}`}>{stat.value}</div>
+            </Card>
+          ))}
+        </div>
       </div>
-    </div>
+    </Card>
   );
 }

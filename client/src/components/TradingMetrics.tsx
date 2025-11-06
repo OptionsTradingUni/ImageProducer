@@ -23,8 +23,8 @@ export default function TradingMetrics({
   const sellVolPercentage = 48;
 
   return (
-    <Card className="mx-6 mb-4 p-6 bg-card border-card-border" data-testid="card-trading-metrics">
-      <div className="grid grid-cols-3 gap-6">
+    <Card className="p-6 bg-card border-card-border" data-testid="card-trading-metrics">
+      <div className="grid grid-cols-4 gap-6">
         <div>
           <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">TXNS</div>
           <div className="text-2xl font-bold" data-testid="text-txns">{txns}</div>

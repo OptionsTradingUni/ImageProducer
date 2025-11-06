@@ -18,12 +18,12 @@ export default function TimeframeStats() {
   const [selected, setSelected] = useState("24H");
 
   return (
-    <div className="grid grid-cols-4 gap-2 px-6 pb-4">
+    <div className="grid grid-cols-4 gap-3">
       {timeframes.map((tf) => (
         <Card
           key={tf.label}
-          className={`p-3 cursor-pointer transition-colors hover-elevate active-elevate-2 ${
-            selected === tf.label ? "bg-muted border-muted-border" : "bg-card border-card-border"
+          className={`p-4 cursor-pointer transition-colors hover-elevate active-elevate-2 ${
+            selected === tf.label ? "bg-green-500/20 border-green-500/50" : "bg-card border-card-border"
           }`}
           onClick={() => {
             setSelected(tf.label);
@@ -33,7 +33,7 @@ export default function TimeframeStats() {
         >
           <div className="text-xs text-muted-foreground uppercase mb-1">{tf.label}</div>
           <div
-            className={`text-lg font-bold ${
+            className={`text-xl font-bold ${
               tf.isPositive ? "text-green-500" : "text-red-500"
             }`}
             data-testid={`text-change-${tf.label.toLowerCase()}`}

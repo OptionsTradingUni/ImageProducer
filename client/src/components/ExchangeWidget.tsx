@@ -10,7 +10,7 @@ export default function ExchangeWidget() {
   const [toCurrency, setToCurrency] = useState<"USD" | "SOL">("USD");
 
   return (
-    <Card className="mx-6 mb-6 p-6 bg-card border-card-border" data-testid="card-exchange">
+    <Card className="p-6 bg-card border-card-border" data-testid="card-exchange">
       <div className="space-y-4">
         <div className="relative">
           <Input
